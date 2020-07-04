@@ -11,7 +11,7 @@ RUN curl -sSf https://sh.rustup.rs | sh -s -- -y
 RUN echo "export PATH=~/.cargo/bin:$PATH" >> ~/.bashrc
 
 RUN mkdir -p /storage &&\
-    mkdir -p /storage/tmpdir
+    #mkdir -p /storage/tmpdir
 
 ENV LOTUS_STORAGE_PATH /storage/.lotusstorage
 ENV LOTUS_PATH /storage/.lotus
@@ -53,6 +53,8 @@ ENV IPFS_GATEWAY=https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/
 ENV FIL_PROOFS_MAXIMIZE_CACHING=1
 
 ENV FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1
+
+ENV FIL_PROOFS_USE_GPU_TREE_BUILDER=1
 
 #WORKDIR /storage
 WORKDIR /lotus
