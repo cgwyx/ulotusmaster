@@ -1,4 +1,4 @@
-FROM docker.io/ubuntu:18.04
+FROM docker.io/ubuntu:latest
 
 RUN apt-get update
 RUN apt-get install curl software-properties-common -y
